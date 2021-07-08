@@ -3,35 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
     <title>Countries API</title>
   </head>
   <body>
-    <div class="container my-auto mt-3">
-      <h1>Countries API</h1>
-      <div class="row my-auto mt-5">
-        <div class="col-9">
-          <p>Please select your preferred country or city</p>
-          <ul id="countryData"></ul>
-          <form method="">
-            <input type="select" class="form-control" id="">
-            <div class="mt-2">
-              <input type="radio" id="country"
-              name="contact" value="email">
-              <label for="contactChoice1">Country</label>
-              <input type="radio" id="capital"
-              name="contact" value="phone">
-              <label for="contactChoice2">Capital</label>
-            </div>
-            <div>
-              <button type="submit" class="btn btn-primary my-2" id="btnShowData">Show Data</button>
-            </div>
-          </form>
+    <h1>Welcome !</h1>
+
+		<div class="container">
+			<div class="form">
+				<input type="text" id="userSearchValue" />
+
+        <div class="mt-2" id="radioGroup">
+          <input type="radio" id="checkValue">
+          <label>Country</label>
+
+          <input type="radio" id="checkValue">
+          <label>Capital</label>
         </div>
-      </div>
-    </div>    
+
+				<button id="btnShowData">Show Data</button>
+			</div>
+
+			<div class="data">
+				<ul id="list"></ul>
+			</div>
+		</div>
 
     <!-- Local JS -->
     <script src="js/jquery.js"></script>
