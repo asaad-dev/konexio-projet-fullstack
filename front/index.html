@@ -11,18 +11,30 @@
   </head>
   <body>
     <h1>Welcome !</h1>
-
+    <p>Please select your preferred country or city</p>
 		<div class="container">
 			<div class="form">
 				<input type="text" id="userSearchValue" />
 
-        <div class="mt-2" id="radioGroup">
-          <input type="radio" id="checkValue">
-          <label>Country</label>
+        <div class="my-2" id="selectedValue">
+          <input type="radio" id="selectedCountry">
+          <label>By Country</label>
 
-          <input type="radio" id="checkValue">
-          <label>Capital</label>
+          <input type="radio" id="selectedCapital">
+          <label>By Capital</label>
         </div>
+
+        <label for="browser">By Continent :</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Europe">
+            <option value="Asia">
+            <option value="Africa">
+            <option value="Oceania">
+            <option value="North America">
+            <option value="North America">
+            <option value="Antarctica">
+        </datalist>
 
 				<button id="btnShowData">Show Data</button>
 			</div>

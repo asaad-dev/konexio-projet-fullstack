@@ -3,7 +3,7 @@ $(() => {
 	// et on "branche" une fonction au click du bouton
 	getAllCountries();
 	$("#btnShowData").click(handleClick);
-    $("#radioGroup").click(handleClick);
+    $("#selectedValue").click(handleClick);
 });
 
 async function getAllCountries() {
@@ -46,29 +46,41 @@ async function handleClick() {
 }
 //////////////////
 
-// Select by capitaly
 
 // Fonction qui permet de mettre à jour la liste en injectant du HTML
 // dans cette dernière
-function updateCapital(checkValue) {
+function updateCapital(selectedValue) {
 	// Effacer la liste existante
-	$("#checkValue").empty();
+	$("#selectedValue").empty();
 
 	// Mise à jour de la liste à l'écran
-	checkValue.forEach((country) =>
-		$("#checkValue").append(
-			`
+    if(selectedValue === selectedCapital) {
+
+        checkValue.forEach((country) =>
+        $("#selectedValue").append(
+            `
             <li class="card">
-                <p>${document.getElementById('checkValue').checked}</p>
+            <p>${country.capital}</p>
             </li>
-        `
-		)
-	);
+            `
+            )
+        );
+    } else {
+        checkValue.forEach((country) =>
+        $("#selectedValue").append(
+            `
+            <li class="card">
+            <p>${country.name}</p>
+            </li>
+            `
+            )
+        );
+    }
 }
 
 async function handleClick() {
-	const userSearchCapital = $("#userSearchCapital").val();
-	const res = await fetch(`http://localhost:3000/${userSearchCapital}`);
+	const selectedValue = $("#selectedValue").val();
+	const res = await fetch(`http://localhost:3000/${selectedValue}`);
 	const jsonRes = await res.json();
 	console.log(jsonRes);
 

@@ -38,7 +38,7 @@ app.get("/:countryName", (req, res) => {
 
 // Étape 2
 app.get('/:countryCapital', (req, res) => {
-    const countryCapital = req.params.countryCapital.toLocaleLowerCase();
+    const countryCapital = req.params.countryCapital.toLowerCase();
 
     const countriesData = countriesData.filter(
         (country) => country.capital.toLowerCase() === countryCapital 
@@ -51,6 +51,19 @@ app.get('/:countryCapital', (req, res) => {
 });
 
 
+// Étape 3
+app.get('/:countryRegion', (req, res) => {
+    const countryRegion = req.params.countryRegion.toLowerCase();
+
+    const countriesData = countriesData.filter(
+        (country) => country.region.toLowerCase() === countryRegion 
+    );
+
+    res.json({
+        status: "success",
+        data: countryData
+    });
+});
 
 
 /**
